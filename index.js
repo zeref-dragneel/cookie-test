@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-
+var cors = require('cors')
+app.use(cors())
 app.get("/",(req,res)=>{
     res.status(200).cookie("auth","authorizer",{httpOnly:true}).send("hello world")
 })
